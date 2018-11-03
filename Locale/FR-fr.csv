@@ -1,0 +1,50 @@
+﻿ID,Text,Translation
+1776300000,Elevator A.I.,Elevator A.I.
+1776300001,Elevator A.I is already installed. You must uninstall the Elevator A.I from the existing Space Elevator to move it. Control Click the A.I. button in the Space Elevator.,Elevator A.I est déjà installé. Vous devez désinstaller l'élévateur A.I de l'ascenseur spatial existant pour le déplacer. Contrôle Cliquez sur le A.I. bouton dans l'ascenseur spatial.
+1776300002,Show me where the Elevator A.I is installed,Montrez-moi où l'ascenseur A.I est installé
+1776300003,Close Window,Fermer la fenêtre
+1776300004,Disable Elevator A.I.,Désactiver l'élévateur A.I.
+1776300005,Disable the Elevator A.I.,Désactiver l'ascenseur A.I.
+1776300006,Space Elevator - Elevator A.I. Running,Ascenseur spatial - ascenseur A.I. Fonctionnement
+1776300007,Install Elevator A.I.,Installez l'élévateur A.I.
+1776300008,Install the Elevator A.I. for this Space Elevator.,Installez l'élévateur A.I. pour cet ascenseur spatial.
+1776300009,Space Elevator - Elevator A.I. not Installed,Ascenseur spatial - ascenseur A.I. pas installé
+1776300010,Enable Elevator A.I.,Activer l'ascenseur A.I.
+1776300011,Enable the Elevator A.I.,Activer l'ascenseur A.I.
+1776300012,Space Elevator - Elevator A.I. Stopped,Ascenseur spatial - ascenseur A.I. Arrêté
+1776300013,<left_click> Activate<newline>Ctrl+<left_click> Uninstall A.I. from this Elevator,<clic gauche> Activer <nouvelle ligne> Ctrl + <clic gauche> Désinstaller A.I. de cet ascenseur
+1776300014,Select the threshold to trigger a resupply for each resource.,Sélectionnez le seuil pour déclencher un réapprovisionnement pour chaque ressource.
+1776300015,Prohibited,Interdit
+1776300016,Busy,Occupé
+1776300017,Elevator A.I. Restock Schedule,Ascenseur A.I. Calendrier de réapprovisionnement
+1776300018,The schedule is set by the frequency.  24 hours are divided by the frequency number and the A.I schedule is evenly distributed throughout the day.<newline><newline><em>Schedule</em><newline><EAI_schedule>,Le calendrier est défini par la fréquence. 24 heures sont divisées par le numéro de fréquence et l'horaire A.I est uniformément distribué tout au long de la journée. <newline><newline><em>Schedule</em><newline><EAI_schedule>
+1776300019,Next A.I. reorder check:,Suivant A.I. contrôle de commande:
+1776300020,Elevator A.I. Frequency,Ascenseur A.I. La fréquence
+1776300021,Select the frequency the A.I will check and restock the colony stock each sol.,Sélectionnez la fréquence à laquelle l'AI va vérifier et réapprovisionner le stock de colonies de chaque sol.
+1776300022,Precious Metals,Métaux précieux
+1776300023,Select the minimum amount of Precious Metals to keep in stock before allowing exports.<newline>Settings greater than zero cause Elevator A.I. to take over exporting.,Sélectionnez la quantité minimale de métaux précieux à conserver en stock avant d’autoriser les exportations. <newline> Les paramètres supérieurs à zéro provoquent un ascenseur A.I. prendre en charge l'exportation.
+1776300024,Concrete,Béton
+1776300025,Select the threshold of concrete in the colony Elevator A.I. will check before ordering more concrete.  The threshold is also the reorder amount.,Sélectionnez le seuil de béton dans la colonie Elevator A.I. vérifiera avant de commander plus de béton. Le seuil correspond également au montant de la commande.
+1776300026,Metals,Les métaux
+1776300027,Select the threshold of metals in the colony Elevator A.I. will check before ordering more metals.  The threshold is also the reorder amount.,Sélectionnez le seuil de métaux dans la colonie Elevator A.I. vérifiera avant de commander plus de métaux. Le seuil correspond également au montant de la commande.
+1776300028,Food,Aliments
+1776300029,Select the threshold of food in the colony Elevator A.I. will check before ordering more food.  The threshold is also the reorder amount.,Sélectionnez le seuil de nourriture dans la colonie Elevator A.I. vérifiera avant de commander plus de nourriture. Le seuil correspond également au montant de la commande.
+1776300030,Polymers,Polymères
+1776300031,Select the threshold of polymers in the colony Elevator A.I. will check before ordering more polymers.  The threshold is also the reorder amount.,Sélectionnez le seuil de polymères dans la colonie Elevator A.I. vérifiera avant de commander plus de polymères. Le seuil correspond également au montant de la commande.
+1776300032,Machine Parts,Pièces de machines
+1776300033,Select the threshold of machine parts in the colony Elevator A.I. will check before ordering more machine parts.  The threshold is also the reorder amount.,Sélectionnez le seuil des pièces de la machine dans la colonie Elevator A.I. vérifiera avant de commander plus de pièces de machine. Le seuil correspond également au montant de la commande.
+1776300034,Electronics,Électronique
+1776300035,Select the threshold of electronics in the colony Elevator A.I. will check before ordering more electronics.  The threshold is also the reorder amount.,Sélectionnez le seuil de l'électronique dans la colonie Elevator A.I. vérifiera avant de commander plus d'électronique. Le seuil correspond également au montant de la commande.
+1776300036,Rare Metal exports are controlled by Elevator A.I.,Les exportations de métaux rares sont contrôlées par Elevator A.I.
+1776300100,Elevator A.I Paused,Ascenseur A.I en pause
+1776300101,Elevator A.I. is prohibited from operating. Resupply is disabled.,Ascenseur A.I. est interdit d'opérer. Le réapprovisionnement est désactivé.
+1776300102,Elevator A.I Running,Ascenseur A.I Courir
+1776300103,Elevator A.I. is running.,Ascenseur A.I. est en cours d'exécution.
+1776300104,Elevator A.I Order,Ascenseur A.I Commande
+1776300105,Elevator A.I is restocking the colony.,Ascenseur A.I est en train de repeupler la colonie.
+1776300106,Elevator A.I Order Status,Ascenseur A.I Statut de la commande
+1776300107,Elevator A.I ran out of funds during reorder.  Some orders have been filled.,Elevator A.I a manqué de fonds lors de la commande. Certaines commandes ont été remplies.
+1776300108,No orders processed. Not enough funds.,Aucune commande traitée. Pas assez de fonds.
+1776300109,Elevator A.I. Auto Export,Ascenseur A.I. Exportation automatique
+1776300110,Elevator A.I. is controlling exports.,Ascenseur A.I. contrôle les exportations.
+1776300111,Exports are now manually controlled.,Les exportations sont maintenant contrôlées manuellement.

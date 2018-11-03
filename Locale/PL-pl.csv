@@ -1,0 +1,50 @@
+﻿ID,Text,Translation
+1776300000,Elevator A.I.,Elevator A.I.
+1776300001,Elevator A.I is already installed. You must uninstall the Elevator A.I from the existing Space Elevator to move it. Control Click the A.I. button in the Space Elevator.,"Winda A.I jest już zainstalowana. Musisz odinstalować Windę A.I z istniejącej Windy Przestrzeni, aby ją przenieść. Kontrola Kliknij przycisk A.I. przycisk w Windie kosmicznej."
+1776300002,Show me where the Elevator A.I is installed,"Pokaż mi, gdzie zainstalowano Windę A.I."
+1776300003,Close Window,Zamknij okno
+1776300004,Disable Elevator A.I.,Wyłącz windę A.I.
+1776300005,Disable the Elevator A.I.,Wyłącz windę A.I.
+1776300006,Space Elevator - Elevator A.I. Running,Winda kosmiczna - winda A.I. Bieganie
+1776300007,Install Elevator A.I.,Zainstaluj Elevator A.I.
+1776300008,Install the Elevator A.I. for this Space Elevator.,Zainstaluj windę A.I. dla tej kosmicznej windy.
+1776300009,Space Elevator - Elevator A.I. not Installed,Winda kosmiczna - winda A.I. nie zainstalowany
+1776300010,Enable Elevator A.I.,Włącz windę A.I.
+1776300011,Enable the Elevator A.I.,Włącz windę A.I.
+1776300012,Space Elevator - Elevator A.I. Stopped,Winda kosmiczna - winda A.I. Zatrzymany
+1776300013,<left_click> Activate<newline>Ctrl+<left_click> Uninstall A.I. from this Elevator,<left_click> Aktywuj <newline> Ctrl + <left_click> Odinstaluj A.I. z tego Winda
+1776300014,Select the threshold to trigger a resupply for each resource.,"Wybierz próg, aby uruchomić dopłatę dla każdego zasobu."
+1776300015,Prohibited,Zabroniony
+1776300016,Busy,Zajęty
+1776300017,Elevator A.I. Restock Schedule,Winda A.I. Uzupełnij harmonogram
+1776300018,The schedule is set by the frequency.  24 hours are divided by the frequency number and the A.I schedule is evenly distributed throughout the day.<newline><newline><em>Schedule</em><newline><EAI_schedule>,"Harmonogram jest ustalany na podstawie częstotliwości. 24 godziny dzielone są przez numer częstotliwości, a harmonogram AI jest równomiernie rozłożony w ciągu dnia. <newline><newline><em>Harmonogram</em><newline><EAI_schedule>"
+1776300019,Next A.I. reorder check:,Następny A.I. sprawdź kolejność:
+1776300020,Elevator A.I. Frequency,Winda A.I. Częstotliwość
+1776300021,Select the frequency the A.I will check and restock the colony stock each sol.,"Wybierz częstotliwość, w której A.I sprawdzi i uzupełni zapasy kolonii każdego zolu."
+1776300022,Precious Metals,Metale szlachetne
+1776300023,Select the minimum amount of Precious Metals to keep in stock before allowing exports.<newline>Settings greater than zero cause Elevator A.I. to take over exporting.,Wybierz minimalną ilość Metali Szlachetnych aby utrzymać ją w magazynie przed zezwoleniem na eksport. <newline> Ustawienia większe niż zero powodują że winda A.I. przejąć eksport.
+1776300024,Concrete,Beton
+1776300025,Select the threshold of concrete in the colony Elevator A.I. will check before ordering more concrete.  The threshold is also the reorder amount.,Wybierz próg betonu w kolonii Winda A.I. sprawdzi przed złożeniem zamówienia bardziej konkretny. Próg to również kwota w kolejce.
+1776300026,Metals,Metale
+1776300027,Select the threshold of metals in the colony Elevator A.I. will check before ordering more metals.  The threshold is also the reorder amount.,Wybierz próg metali w kolonii Winda A.I. sprawdzi przed zamówieniem więcej metali. Próg to również kwota w kolejce.
+1776300028,Food,jedzenie
+1776300029,Select the threshold of food in the colony Elevator A.I. will check before ordering more food.  The threshold is also the reorder amount.,Wybierz próg pokarmu w kolonii Winda A.I. sprawdzi przed zamówieniem więcej jedzenia. Próg to również kwota w kolejce.
+1776300030,Polymers,Polimery
+1776300031,Select the threshold of polymers in the colony Elevator A.I. will check before ordering more polymers.  The threshold is also the reorder amount.,Wybierz próg polimerów w kolonii Winda A.I. sprawdzi przed zamówieniem więcej polimerów. Próg to również kwota w kolejce.
+1776300032,Machine Parts,Części maszyny
+1776300033,Select the threshold of machine parts in the colony Elevator A.I. will check before ordering more machine parts.  The threshold is also the reorder amount.,Wybierz próg części maszyny w kolonii Winda A.I. sprawdzi przed zamówieniem więcej części maszyny. Próg to również kwota w kolejce.
+1776300034,Electronics,Elektronika
+1776300035,Select the threshold of electronics in the colony Elevator A.I. will check before ordering more electronics.  The threshold is also the reorder amount.,Wybierz próg elektroniki w kolonii Winda A.I. sprawdzi przed zamówieniem więcej elektroniki. Próg to również kwota w kolejce.
+1776300036,Rare Metal exports are controlled by Elevator A.I.,Eksport rzadkich metali kontrolowany jest przez Windę A.I.
+1776300100,Elevator A.I Paused,Winda A.I Wstrzymana
+1776300101,Elevator A.I. is prohibited from operating. Resupply is disabled.,Winda A.I. jest zabronione w działaniu. Uzupełnienie jest wyłączone.
+1776300102,Elevator A.I Running,Winda A.I Running
+1776300103,Elevator A.I. is running.,Winda A.I. biegnie.
+1776300104,Elevator A.I Order,Winda A.I Zamówienie
+1776300105,Elevator A.I is restocking the colony.,Winda A.I jest uzupełnieniem kolonii.
+1776300106,Elevator A.I Order Status,Winda A.I Status zamówienia
+1776300107,Elevator A.I ran out of funds during reorder.  Some orders have been filled.,Winda A.Jeżeli zabrakło funduszy podczas kolejnej zmiany. Niektóre zamówienia zostały wypełnione.
+1776300108,No orders processed. Not enough funds.,Brak zamówień. Brak wystarczających środków.
+1776300109,Elevator A.I. Auto Export,Winda A.I. Automatyczny eksport
+1776300110,Elevator A.I. is controlling exports.,Winda A.I. kontroluje eksport.
+1776300111,Exports are now manually controlled.,Eksport jest teraz kontrolowany ręcznie.

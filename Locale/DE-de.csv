@@ -1,0 +1,50 @@
+﻿ID,Text,Translation
+1776300000,Elevator A.I.,Elevator A.I.
+1776300001,Elevator A.I is already installed. You must uninstall the Elevator A.I from the existing Space Elevator to move it. Control Click the A.I. button in the Space Elevator.,Aufzug A.I ist bereits installiert. Sie müssen den Elevator A.I aus dem vorhandenen Space Elevator deinstallieren um ihn zu verschieben. Kontrolle Klicken Sie auf die A.I. Knopf im Space Elevator.
+1776300002,Show me where the Elevator A.I is installed,"Zeig mir, wo der Aufzug A.I installiert ist"
+1776300003,Close Window,Fenster schließen
+1776300004,Disable Elevator A.I.,Deaktivieren Aufzug A.I.
+1776300005,Disable the Elevator A.I.,Deaktivieren Sie den Aufzug A.I.
+1776300006,Space Elevator - Elevator A.I. Running,Raumaufzug - Aufzug A.I. Laufen
+1776300007,Install Elevator A.I.,Aufzug installieren A.I.
+1776300008,Install the Elevator A.I. for this Space Elevator.,Installieren Sie den Aufzug A.I. für diesen Raumaufzug.
+1776300009,Space Elevator - Elevator A.I. not Installed,Raumaufzug - Aufzug A.I. nicht installiert
+1776300010,Enable Elevator A.I.,Fahrstuhl aktivieren A.I.
+1776300011,Enable the Elevator A.I.,Aktivieren Sie den Aufzug A.I.
+1776300012,Space Elevator - Elevator A.I. Stopped,Raumaufzug - Aufzug A.I. Gestoppt
+1776300013,<left_click> Activate<newline>Ctrl+<left_click> Uninstall A.I. from this Elevator,<left_click> Aktivieren Sie <newline> Strg + <left_click> Deinstallieren A.I. von diesem Aufzug
+1776300014,Select the threshold to trigger a resupply for each resource.,Wählen Sie den Schwellenwert aus um eine Nachlieferung für jede Ressource auszulösen.
+1776300015,Prohibited,Verboten
+1776300016,Busy,Beschäftigt
+1776300017,Elevator A.I. Restock Schedule,Aufzug A.I. Wiederauffüllungszeitplan
+1776300018,The schedule is set by the frequency.  24 hours are divided by the frequency number and the A.I schedule is evenly distributed throughout the day.<newline><newline><em>Schedule</em><newline><EAI_schedule>,Der Zeitplan wird durch die Häufigkeit festgelegt. 24 Stunden werden durch die Häufigkeitszahl geteilt und der A.I-Plan wird gleichmäßig über den Tag verteilt. <newline><newline><em>Zeitplan</em><newline><EAI_schedule>
+1776300019,Next A.I. reorder check:,Nächste A.I. Reorder-Check:
+1776300020,Elevator A.I. Frequency,Aufzug A.I. Frequenz
+1776300021,Select the frequency the A.I will check and restock the colony stock each sol.,"Wählen Sie die Frequenz aus, die das A.I überprüfen und den Koloniebestand jedes Sols auffüllen wird."
+1776300022,Precious Metals,Edelmetalle
+1776300023,Select the minimum amount of Precious Metals to keep in stock before allowing exports.<newline>Settings greater than zero cause Elevator A.I. to take over exporting.,Wählen Sie die Mindestmenge an Edelmetallen aus die auf Lager gehalten werden soll bevor Sie Exporte zulassen. <newline> Einstellungen größer als null verursachen Aufzug A.I. Export übernehmen.
+1776300024,Concrete,Beton
+1776300025,Select the threshold of concrete in the colony Elevator A.I. will check before ordering more concrete.  The threshold is also the reorder amount.,Wählen Sie den Betonschwellenwert in der Kolonie Elevator A.I. prüft vor der Bestellung konkreter. Der Schwellenwert ist auch der Nachbestellbetrag.
+1776300026,Metals,Metalle
+1776300027,Select the threshold of metals in the colony Elevator A.I. will check before ordering more metals.  The threshold is also the reorder amount.,Wählen Sie die Schwelle von Metallen in der Kolonie Elevator A.I. überprüfen vor dem Kauf mehr Metalle. Der Schwellenwert ist auch der Nachbestellbetrag.
+1776300028,Food,Essen
+1776300029,Select the threshold of food in the colony Elevator A.I. will check before ordering more food.  The threshold is also the reorder amount.,Wählen Sie die Schwelle der Nahrung in der Kolonie Elevator A.I. überprüfen vor der Bestellung mehr Essen. Der Schwellenwert ist auch der Nachbestellbetrag.
+1776300030,Polymers,Polymere
+1776300031,Select the threshold of polymers in the colony Elevator A.I. will check before ordering more polymers.  The threshold is also the reorder amount.,Wählen Sie die Schwelle von Polymeren in der Kolonie Elevator A.I. wird prüfen bevor Sie weitere Polymere bestellen. Der Schwellenwert ist auch der Nachbestellbetrag.
+1776300032,Machine Parts,Maschinenteile
+1776300033,Select the threshold of machine parts in the colony Elevator A.I. will check before ordering more machine parts.  The threshold is also the reorder amount.,Wählen Sie die Schwelle der Maschinenteile in der Kolonie Elevator A.I. überprüft vor der Bestellung mehr Maschinenteile. Der Schwellenwert ist auch der Nachbestellbetrag.
+1776300034,Electronics,Elektronik
+1776300035,Select the threshold of electronics in the colony Elevator A.I. will check before ordering more electronics.  The threshold is also the reorder amount.,Wählen Sie den Schwellenwert der Elektronik in der Kolonie Elevator A.I. überprüfen vor der Bestellung mehr Elektronik. Der Schwellenwert ist auch der Nachbestellbetrag.
+1776300036,Rare Metal exports are controlled by Elevator A.I.,Seltene Metallexporte werden von Elevator A.I.
+1776300100,Elevator A.I Paused,Aufzug A.I Pausiert
+1776300101,Elevator A.I. is prohibited from operating. Resupply is disabled.,Aufzug A.I. ist untersagt zu operieren. Die Nachversorgung ist deaktiviert.
+1776300102,Elevator A.I Running,Aufzug A.I Laufend
+1776300103,Elevator A.I. is running.,Aufzug A.I. läuft.
+1776300104,Elevator A.I Order,Aufzug A.I Auftrag
+1776300105,Elevator A.I is restocking the colony.,Elevator A. Ich stemme die Kolonie auf.
+1776300106,Elevator A.I Order Status,Aufzug A.I Bestellstatus
+1776300107,Elevator A.I ran out of funds during reorder.  Some orders have been filled.,Elevator A. Ich hatte während der Nachbestellung kein Geld mehr. Einige Bestellungen wurden ausgefüllt.
+1776300108,No orders processed. Not enough funds.,Keine Bestellungen bearbeitet. Nicht genug Geld.
+1776300109,Elevator A.I. Auto Export,Aufzug A.I. Automatischer Export
+1776300110,Elevator A.I is controlling exports.,Aufzug A.I. kontrolliere den Export.
+1776300111,Exports are now manually controlled.,Exporte werden jetzt manuell gesteuert.

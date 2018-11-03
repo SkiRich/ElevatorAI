@@ -1,0 +1,50 @@
+﻿ID,Text,Translation
+1776300000,Elevator A.I.,Elevator A.I.
+1776300001,Elevator A.I is already installed. You must uninstall the Elevator A.I from the existing Space Elevator to move it. Control Click the A.I. button in the Space Elevator.,"Асансьор A.I вече е инсталиран. Трябва да деинсталирате асансьора A.I от съществуващия космически асансьор, за да го преместите. Контрол Кликнете върху полето за индексиране. бутон в космическия асансьор."
+1776300002,Show me where the Elevator A.I is installed,Покажете ми къде е монтиран асансьорът A.I.
+1776300003,Close Window,Затвори прозореца
+1776300004,Disable Elevator A.I.,Изключване на асансьора A.I.
+1776300005,Disable the Elevator A.I.,Деактивирайте асансьора A.I.
+1776300006,Space Elevator - Elevator A.I. Running,Асансьор - Асансьор A.I. Работещи
+1776300007,Install Elevator A.I.,Инсталиране на асансьор A.I.
+1776300008,Install the Elevator A.I. for this Space Elevator.,Инсталирайте асансьора A.I. за този космически асансьор.
+1776300009,Space Elevator - Elevator A.I. not Installed,Асансьор - Асансьор A.I. не е инсталирано
+1776300010,Enable Elevator A.I.,Активиране на асансьор A.I.
+1776300011,Enable the Elevator A.I.,Активирайте асансьора A.I.
+1776300012,Space Elevator - Elevator A.I. Stopped,Асансьор - Асансьор A.I. Спряна
+1776300013,<left_click> Activate<newline>Ctrl+<left_click> Uninstall A.I. from this Elevator,<left_click> Активиране на <newline> Ctrl + <left_click> Деинсталиране на A.I. от този асансьор
+1776300014,Select the threshold to trigger a resupply for each resource.,Изберете прага за задействане на resupply за всеки ресурс.
+1776300015,Prohibited,Забранени
+1776300016,Busy,Зает
+1776300017,Elevator A.I. Restock Schedule,Асансьор A.I. График за рестартиране
+1776300018,The schedule is set by the frequency.  24 hours are divided by the frequency number and the A.I schedule is evenly distributed throughout the day.<newline><newline><em>Schedule</em><newline><EAI_schedule>,Графикът се определя от честотата. 24 часа се разделят на номера на честотата и графикът АИ е равномерно разпределен през целия ден. <newline><newline><em>Schedule</em><newline><EAI_schedule>
+1776300019,Next A.I. reorder check:,Следващите A.I. проверка на повторната поръчка:
+1776300020,Elevator A.I. Frequency,Асансьор A.I. Честота
+1776300021,Select the frequency the A.I will check and restock the colony stock each sol.,"Изберете честотата, която АИ ще проверява и възстановява количеството на колонията от всеки сол."
+1776300022,Precious Metals,Скъпоценни метали
+1776300023,Select the minimum amount of Precious Metals to keep in stock before allowing exports.<newline>Settings greater than zero cause Elevator A.I. to take over exporting.,Изберете минималното количество ценни метали за да запазите на склад преди да разрешите износа. <newline> Настройки по-големи от нул причиняват асансьор A.I. да поеме износ.
+1776300024,Concrete,бетон
+1776300025,Select the threshold of concrete in the colony Elevator A.I. will check before ordering more concrete.  The threshold is also the reorder amount.,Изберете прага на бетон в колонията Асансьор A.I. ще провери преди да поръча по-конкретни. Прагът е и сумата за повторно поръчване.
+1776300026,Metals,Метали
+1776300027,Select the threshold of metals in the colony Elevator A.I. will check before ordering more metals.  The threshold is also the reorder amount.,Изберете прага на металите в колонията Асансьор A.I. ще провери преди да поръча повече метали. Прагът е и сумата за повторно поръчване.
+1776300028,Food,Храна
+1776300029,Select the threshold of food in the colony Elevator A.I. will check before ordering more food.  The threshold is also the reorder amount.,Изберете прага на храната в колонията Асансьор A.I. ще провери преди да поръча повече храна. Прагът е и сумата за повторно поръчване.
+1776300030,Polymers,Полимери
+1776300031,Select the threshold of polymers in the colony Elevator A.I. will check before ordering more polymers.  The threshold is also the reorder amount.,Изберете прага на полимери в колонията Асансьор A.I. ще провери преди да поръча повече полимери. Прагът е и сумата за повторно поръчване.
+1776300032,Machine Parts,Машинни части
+1776300033,Select the threshold of machine parts in the colony Elevator A.I. will check before ordering more machine parts.  The threshold is also the reorder amount.,Изберете прага на частите на машината в колонията Асансьор A.I. ще провери преди да поръча повече части от машината. Прагът е и сумата за повторно поръчване.
+1776300034,Electronics,електроника
+1776300035,Select the threshold of electronics in the colony Elevator A.I. will check before ordering more electronics.  The threshold is also the reorder amount.,Изберете прага на електрониката в колонията Асансьор A.I. ще провери преди да поръча повече електроника. Прагът е и сумата за повторно поръчване.
+1776300036,Rare Metal exports are controlled by Elevator A.I.,Износът на редки метали се контролира от Асансьор A.I.
+1776300100,Elevator A.I Paused,Асансьор A. Пауза
+1776300101,Elevator A.I. is prohibited from operating. Resupply is disabled.,Асансьор A.I. е забранено да работи. Захранването е деактивирано.
+1776300102,Elevator A.I Running,Асансьор A.I Running
+1776300103,Elevator A.I. is running.,Асансьор A.I. бяга.
+1776300104,Elevator A.I Order,Асансьор A.I поръчка
+1776300105,Elevator A.I is restocking the colony.,Асансьор А.I възстановява колонията.
+1776300106,Elevator A.I Order Status,Статус на асансьор A.I
+1776300107,Elevator A.I ran out of funds during reorder.  Some orders have been filled.,Асансьор А. Изчерпах средства по време на повторната си редакция. Някои поръчки са изпълнени.
+1776300108,No orders processed. Not enough funds.,Няма обработени поръчки. Няма достатъчно средства.
+1776300109,Elevator A.I. Auto Export,Асансьор A.I. Автоматично експортиране
+1776300110,Elevator A.I is controlling exports.,Асансьор A.I контролира износа.
+1776300111,Exports are now manually controlled.,Износът сега се контролира ръчно.

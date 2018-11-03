@@ -1,0 +1,50 @@
+﻿ID,Text,Translation
+1776300000,Elevator A.I.,Elevator A.I.
+1776300001,Elevator A.I is already installed. You must uninstall the Elevator A.I from the existing Space Elevator to move it. Control Click the A.I. button in the Space Elevator.,El elevador A.I ya está instalado. Debe desinstalar el elevador A.I del elevador espacial existente para moverlo. Control Haga clic en A.I. botón en el ascensor espacial.
+1776300002,Show me where the Elevator A.I is installed,Muéstrame dónde está instalado el elevador A.I.
+1776300003,Close Window,Cerrar ventana
+1776300004,Disable Elevator A.I.,Deshabilite el elevador A.I.
+1776300005,Disable the Elevator A.I.,Desactivar el ascensor A.I.
+1776300006,Space Elevator - Elevator A.I. Running,Ascensor Espacial - Elevador A.I. Corriendo
+1776300007,Install Elevator A.I.,Instale el elevador A.I.
+1776300008,Install the Elevator A.I. for this Space Elevator.,Instale el elevador A.I. para este elevador espacial
+1776300009,Space Elevator - Elevator A.I. not Installed,Ascensor Espacial - Elevador A.I. no instalado
+1776300010,Enable Elevator A.I.,Habilite Elevator A.I.
+1776300011,Enable the Elevator A.I.,Habilita el elevador A.I.
+1776300012,Space Elevator - Elevator A.I. Stopped,Ascensor Espacial - Elevador A.I. Detenido
+1776300013,<left_click> Activate<newline>Ctrl+<left_click> Uninstall A.I. from this Elevator,<left_click> Activar <newline> Ctrl + <left_click> Desinstalar A.I. desde este elevador
+1776300014,Select the threshold to trigger a resupply for each resource.,Seleccione el umbral para activar un reabastecimiento para cada recurso.
+1776300015,Prohibited,Prohibido
+1776300016,Busy,Ocupado
+1776300017,Elevator A.I. Restock Schedule,Ascensor A.I. Calendario de reabastecimiento
+1776300018,The schedule is set by the frequency.  24 hours are divided by the frequency number and the A.I schedule is evenly distributed throughout the day.<newline><newline><em>Schedule</em><newline><EAI_schedule>,El horario está establecido por la frecuencia. 24 horas se dividen por el número de frecuencia y el programa A.I se distribuye de manera uniforme a lo largo del día. <newline><newline><em>Schedule</em><newline><EAI_schedule>
+1776300019,Next A.I. reorder check:,Siguiente A.I. reordenar cheque:
+1776300020,Elevator A.I. Frequency,Ascensor A.I. Frecuencia
+1776300021,Select the frequency the A.I will check and restock the colony stock each sol.,Seleccione la frecuencia con la que A.A comprobará y reabastecerá el stock de la colonia de cada sol.
+1776300022,Precious Metals,Metales preciosos
+1776300023,Select the minimum amount of Precious Metals to keep in stock before allowing exports.<newline>Settings greater than zero cause Elevator A.I. to take over exporting.,Seleccione la cantidad mínima de metales preciosos para mantener en stock antes de permitir las exportaciones. <newline> Configuración mayor que cero causa elevador A.I. para hacerse cargo de la exportación.
+1776300024,Concrete,Hormigón
+1776300025,Select the threshold of concrete in the colony Elevator A.I. will check before ordering more concrete.  The threshold is also the reorder amount.,Seleccione el umbral de concreto en la colonia Ascensor A.I. comprobará antes de ordenar más concreto. El umbral es también el monto de reorden.
+1776300026,Metals,Rieles
+1776300027,Select the threshold of metals in the colony Elevator A.I. will check before ordering more metals.  The threshold is also the reorder amount.,Seleccione el umbral de metales en la colonia Ascensor A.I. comprobará antes de pedir más metales. El umbral es también el monto de reorden.
+1776300028,Food,Comida
+1776300029,Select the threshold of food in the colony Elevator A.I. will check before ordering more food.  The threshold is also the reorder amount.,Seleccione el umbral de comida en la colonia Ascensor A.I. comprobará antes de pedir más comida. El umbral es también el monto de reorden.
+1776300030,Polymers,Polímeros
+1776300031,Select the threshold of polymers in the colony Elevator A.I. will check before ordering more polymers.  The threshold is also the reorder amount.,Seleccione el umbral de polímeros en la colonia Ascensor A.I. comprobará antes de ordenar más polímeros. El umbral es también el monto de reorden.
+1776300032,Machine Parts,Partes de máquina
+1776300033,Select the threshold of machine parts in the colony Elevator A.I. will check before ordering more machine parts.  The threshold is also the reorder amount.,Seleccione el umbral de partes de la máquina en la colonia Ascensor A.I. comprobará antes de ordenar más piezas de la máquina. El umbral es también el monto de reorden.
+1776300034,Electronics,Electrónica
+1776300035,Select the threshold of electronics in the colony Elevator A.I. will check before ordering more electronics.  The threshold is also the reorder amount.,Seleccione el umbral de electrónica en la colonia Ascensor A.I. comprobará antes de pedir más electrónica. El umbral es también el monto de reorden.
+1776300036,Rare Metal exports are controlled by Elevator A.I.,Las exportaciones de metales raros son controladas por Elevator A.I.
+1776300100,Elevator A.I Paused,Elevador A.I en pausa
+1776300101,Elevator A.I. is prohibited from operating. Resupply is disabled.,Ascensor A.I. tiene prohibido operar. El reabastecimiento está deshabilitado.
+1776300102,Elevator A.I Running,Ascensor A.I Running
+1776300103,Elevator A.I. is running.,Ascensor A.I. Esta corriendo.
+1776300104,Elevator A.I Order,Ascensor A.I Orden
+1776300105,Elevator A.I is restocking the colony.,El elevador A.I está reabasteciendo la colonia.
+1776300106,Elevator A.I Order Status,Elevator A.I estado de la orden
+1776300107,Elevator A.I ran out of funds during reorder.  Some orders have been filled.,Elevador A. Me quedé sin fondos durante el reordenamiento. Algunas órdenes se han llenado.
+1776300108,No orders processed. Not enough funds.,No hay pedidos procesados No hay fondos suficientes
+1776300109,Elevator A.I. Auto Export,Ascensor A.I. Exportación automática
+1776300110,Elevator A.I. is controlling exports.,Ascensor A.I. está controlando las exportaciones.
+1776300111,Exports are now manually controlled.,Las exportaciones ahora están controladas manualmente.

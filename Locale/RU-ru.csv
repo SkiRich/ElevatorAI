@@ -1,0 +1,50 @@
+﻿ID,Text,Translation
+1776300000,Elevator A.I.,Elevator A.I.
+1776300001,Elevator A.I is already installed. You must uninstall the Elevator A.I from the existing Space Elevator to move it. Control Click the A.I. button in the Space Elevator.,Лифт A.I уже установлен. Вы должны удалить Лифт A.I из существующего космического лифта чтобы переместить его. Управление Нажмите кнопку A.I. в пространстве.
+1776300002,Show me where the Elevator A.I is installed,Покажите мне где установлен лифт A.I
+1776300003,Close Window,Закрой окно
+1776300004,Disable Elevator A.I.,Отключить лифт A.I.
+1776300005,Disable the Elevator A.I.,Отключите Лифт A.I.
+1776300006,Space Elevator - Elevator A.I. Running,Космический лифт - лифт А.И. Бег
+1776300007,Install Elevator A.I.,Установить лифт A.I.
+1776300008,Install the Elevator A.I. for this Space Elevator.,Установите лифт A.I. для этого космического лифта.
+1776300009,Space Elevator - Elevator A.I. not Installed,Космический лифт - лифт А.И. не установлен
+1776300010,Enable Elevator A.I.,Включить лифт A.I.
+1776300011,Enable the Elevator A.I.,Включить лифт A.I.
+1776300012,Space Elevator - Elevator A.I. Stopped,Космический лифт - лифт А.И. Остановился
+1776300013,<left_click> Activate<newline>Ctrl+<left_click> Uninstall A.I. from this Elevator,<left_click> Активировать <newline> Ctrl + <left_click> Удалить A.I. из этого лифта
+1776300014,Select the threshold to trigger a resupply for each resource.,Выберите пороговое значение для запуска пополнения запасов для каждого ресурса.
+1776300015,Prohibited,Запрещенные
+1776300016,Busy,Занятый
+1776300017,Elevator A.I. Restock Schedule,Лифт А.И. Расписание
+1776300018,The schedule is set by the frequency.  24 hours are divided by the frequency number and the A.I schedule is evenly distributed throughout the day.<newline><newline><em>Schedule</em><newline><EAI_schedule>,Расписание задается частотой. 24 часа делятся на частотный номер а график A.I равномерно распределяется в течение дня. <newline><newline><em>Расписание</em><newline><EAI_schedule>
+1776300019,Next A.I. reorder check:,Далее A.I. проверка порядка:
+1776300020,Elevator A.I. Frequency,Лифт А.И. частота
+1776300021,Select the frequency the A.I will check and restock the colony stock each sol.,Выберите частоту которую A.I проверит и пополнит колонию каждой золой.
+1776300022,Precious Metals,Драгоценные металлы
+1776300023,Select the minimum amount of Precious Metals to keep in stock before allowing exports.<newline>Settings greater than zero cause Elevator A.I. to take over exporting.,Выберите минимальное количество драгоценных металлов чтобы сохранить их на склад прежде чем разрешить экспорт. <newline> Настройки больше нуля приводят к выводу A.I. взять на себя экспорт.
+1776300024,Concrete,бетон
+1776300025,Select the threshold of concrete in the colony Elevator A.I. will check before ordering more concrete.  The threshold is also the reorder amount.,Выберите порог бетона в колонии Лифт A.I. проверит перед тем как заказать более конкретный. Порог также является величиной переупорядочения.
+1776300026,Metals,металлы
+1776300027,Select the threshold of metals in the colony Elevator A.I. will check before ordering more metals.  The threshold is also the reorder amount.,Выберите порог металлов в колонии Лифт A.I. проверит перед заказом больше металлов. Порог также является величиной переупорядочения.
+1776300028,Food,питание
+1776300029,Select the threshold of food in the colony Elevator A.I. will check before ordering more food.  The threshold is also the reorder amount.,Выберите порог еды в колонии Лифт A.I. проверит перед заказом больше еды. Порог также является величиной переупорядочения.
+1776300030,Polymers,Полимеры
+1776300031,Select the threshold of polymers in the colony Elevator A.I. will check before ordering more polymers.  The threshold is also the reorder amount.,Выберите порог полимеров в колонии Elevator A.I. проверит перед заказом больше полимеров. Порог также является величиной переупорядочения.
+1776300032,Machine Parts,Детали машин
+1776300033,Select the threshold of machine parts in the colony Elevator A.I. will check before ordering more machine parts.  The threshold is also the reorder amount.,Выберите порог деталей машины в колонии Elevator A.I. проверит перед заказом больше деталей машины. Порог также является величиной переупорядочения.
+1776300034,Electronics,электроника
+1776300035,Select the threshold of electronics in the colony Elevator A.I. will check before ordering more electronics.  The threshold is also the reorder amount.,Выберите порог электроники в колонии Elevator A.I. проверит перед заказом больше электроники. Порог также является величиной переупорядочения.
+1776300036,Rare Metal exports are controlled by Elevator A.I.,Экспорт редких металлов контролируется лифтом A.I.
+1776300100,Elevator A.I Paused,Лифт A.I Приостановлено
+1776300101,Elevator A.I. is prohibited from operating. Resupply is disabled.,Лифт А.И. запрещено работать. Поставка отключена.
+1776300102,Elevator A.I Running,Лифт A.I Запуск
+1776300103,Elevator A.I. is running.,Лифт А.И. бежит.
+1776300104,Elevator A.I Order,Лифт A.I Заказ
+1776300105,Elevator A.I is restocking the colony.,Лифт A.I пополняет колонию.
+1776300106,Elevator A.I Order Status,Лифт A.I Статус заказа
+1776300107,Elevator A.I ran out of funds during reorder.  Some orders have been filled.,Лифт A. У меня закончились деньги во время переупорядочения. Некоторые заказы были заполнены.
+1776300108,No orders processed. Not enough funds.,Никаких заказов не обрабатывается. Недостаточно средств.
+1776300109,Elevator A.I. Auto Export,Лифт А.И. Автоматический экспорт
+1776300110,Elevator A.I. is controlling exports.,Лифт А.И. контролирует экспорт.
+1776300111,Exports are now manually controlled.,Экспорт теперь контролируется вручную.
