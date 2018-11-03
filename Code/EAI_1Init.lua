@@ -3,8 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated Sept 30th, 2018
-
+-- Updated Nov 2nd, 2018
 
 local lf_debug   = false  -- used only for certain ex() instances
 local lf_printcf = false  -- used to print class fires
@@ -568,8 +567,9 @@ function OnMsg.ClassesBuilt()
   	local old_max_export_storage = self.max_export_storage
 
 		-- cancel demand request, interrupt drones, remove PreciousMetals from demand request
+		-- note: this is a slight difference from ToggleAllowExport, since we do not disconnect
+		-- supply requests, just demand requests.
 		if self.export_request then
-			assert(table.find(self.task_requests, self.export_request)) -- quick check to make sure we are still exporting otherwise error out
 			self:InterruptDrones(nil, function(drone)
 												if (drone.target == self) or
 													(drone.d_request and drone.d_request:GetBuilding() == self) or
@@ -589,6 +589,8 @@ function OnMsg.ClassesBuilt()
       local excess = 0
       if rareMetalsOnDeck > self.max_export_storage then excess = rareMetalsOnDeck - self.max_export_storage end
       self.export_request:SetAmount(self.max_export_storage - (rareMetalsOnDeck - excess))
+
+      -- dump excess raremetals on palllet outside building
       if excess > 0 then self:PlaceReturnStockpile("PreciousMetals", excess) end
 
 			self:ConnectToCommandCenters()
