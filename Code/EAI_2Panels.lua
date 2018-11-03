@@ -3,7 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated Sept 7th, 2018
+-- Updated Nov 2nd, 2018
 
 local lf_printDebug = false  -- Used to print anything designated as debug
 local lf_print      = false  -- Setup debug printing in local file
@@ -95,7 +95,7 @@ end --InitEAI()
 
 local function ConfigureEAI(self, option)
 	local elevator = self.context
-	local EAISection = self.parent.parent.parent.parent.idElevatorAISection
+	local EAISection = self.parent.parent.parent.parent.parent.idElevatorAISection
 
   if option == "install" and (not g_EAI.GUID) then
     elevator.EAI_installed = true
@@ -151,7 +151,7 @@ function OnMsg.ClassesBuilt()
   local PlaceObj = PlaceObj
   local EAIButtonID1 = "ElevatorAIButton-01"
   local EAISectionID1 = "ElevatorAISection-01"
-  local EAIControlVer = "v1.1"
+  local EAIControlVer = "v1.2"
   local XT = XTemplates.ipBuilding[1]
 
   if lf_print then print("Loading Classes in EAI_2Panels.lua") end
@@ -255,13 +255,13 @@ function OnMsg.ClassesBuilt()
        	end --context.EAI_enabled
 
        	-- Set the idElevatorAISection visibile or not depending on status
-        local EAISection = self.parent.parent.parent.parent.idElevatorAISection
+        local EAISection = self.parent.parent.parent.parent.parent.idElevatorAISection
        	EAISection:SetVisible(context.EAI_installed and context.EAI_enabled)
       end, -- OnContextUpdate
 
       "OnPress", function(self, gamepad)
       	PlayFX("DomeAcceptColonistsChanged", "start", self.context)
-      	local EAISection = self.parent.parent.parent.parent.idElevatorAISection
+      	local EAISection = self.parent.parent.parent.parent.parent.idElevatorAISection
       	local elevator = self.context
       	if not elevator.EAI_installed and not IsControlPressed() then
       		-- Install the Elevator A.I in this elevator
