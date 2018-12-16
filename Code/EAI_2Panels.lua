@@ -3,7 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated Nov 2nd, 2018
+-- Updated Dec 15th, 2018
 
 local lf_printDebug = false  -- Used to print anything designated as debug
 local lf_print      = false  -- Setup debug printing in local file
@@ -66,6 +66,7 @@ local function AIalreadyInstalledPopup()
             choice1 = T{StringIdBase + 2, "Show me where the Elevator A.I is installed"},
             choice2 = T{StringIdBase + 3, "Close Window"},
               image = "UI/Messages/artificial_intelligence_mystery_01.tga",
+              start_minimized = false,
         } -- params
         local choice = WaitPopupNotification(false, params)
         if choice == 1 then
@@ -92,8 +93,30 @@ local function InitEAI(elevator)
 	if not elevator.EAI_GUID then elevator.EAI_GUID = tostring(AsyncRand()).."-"..tostring(GetPreciseTicks()) end
 end --InitEAI()
 
+local function EAIupdateButtonRollover(button)
+	local elevator = button.context
+	if elevator.EAI_enabled then
+    button:SetRolloverTitle(T{StringIdBase + 4, "Disable Elevator A.I."})
+    button:SetRolloverText(T{StringIdBase + 5, "Disable the Elevator A.I."})
+    elevator.description = T{StringIdBase + 6, "Space Elevator - Elevator A.I. Running"}
+  end -- if enabled
+
+  if (not elevator.EAI_enabled) and elevator.EAI_installed then
+    button:SetRolloverTitle(T{StringIdBase + 10, "Enable Elevator A.I."})
+    button:SetRolloverText(T{StringIdBase + 11, "Enable the Elevator A.I."})
+    elevator.description = T{StringIdBase + 12, "Space Elevator - Elevator A.I. Stopped"}
+  end -- disabled but installed
+
+  if not elevator.EAI_installed then
+    button:SetRolloverTitle(T{StringIdBase + 7, "Install Elevator A.I."})
+    button:SetRolloverText(T{StringIdBase + 8, "Install the Elevator A.I. for this Space Elevator."})
+    elevator.description = T{StringIdBase + 9, "Space Elevator - Elevator A.I. not Installed"}
+  end -- if not installed
+
+end -- EAIbuttonRollover
 
 local function ConfigureEAI(self, option)
+	-- self is the button
 	local elevator = self.context
 	local EAISection = self.parent.parent.parent.parent.parent.idElevatorAISection
 
@@ -104,9 +127,7 @@ local function ConfigureEAI(self, option)
     g_EAI.elevator = elevator
     EAISection:SetVisible(true)
     self:SetIcon(iconEAIButtonOn)
-    self:SetRolloverTitle(T{StringIdBase + 4, "Disable Elevator A.I."})
-    self:SetRolloverText(T{StringIdBase + 5, "Disable the Elevator A.I."})
-    elevator.description = T{StringIdBase + 6, "Space Elevator - Elevator A.I. Running"}
+    EAIupdateButtonRollover(self)
   elseif option == "install" and g_EAI.GUID then
   	AIalreadyInstalledPopup()
   end -- option == "install"
@@ -116,10 +137,10 @@ local function ConfigureEAI(self, option)
     elevator:EAIRestoreExportStorage()
     g_EAI.GUID = false
     g_EAI.elevator = false
+    elevator.EAI_installed = false
+    elevator.EAI_enabled = false
     EAISection:SetVisible(false)
-    self:SetRolloverTitle(T{StringIdBase + 7, "Install Elevator A.I."})
-    self:SetRolloverText(T{StringIdBase + 8, "Install the Elevator A.I. for this Space Elevator."})
-    elevator.description = T{StringIdBase + 9, "Space Elevator - Elevator A.I. not Installed"}
+    EAIupdateButtonRollover(self)
     self:SetIcon(iconEAIButtonNA)
     self.cxDesc = false
   end -- option == "uninstall"
@@ -128,18 +149,14 @@ local function ConfigureEAI(self, option)
     EAISection:SetVisible(false)
     elevator.EAI_enabled = false
     self:SetIcon(iconEAIButtonOff)
-    self:SetRolloverTitle(T{StringIdBase + 10, "Enable Elevator A.I."})
-    self:SetRolloverText(T{StringIdBase + 11, "Enable the Elevator A.I."})
-    elevator.description = T{StringIdBase + 12, "Space Elevator - Elevator A.I. Stopped"}
+    EAIupdateButtonRollover(self)
   end -- option == "disable"
 
   if option == "enable" then
     EAISection:SetVisible(true)
     elevator.EAI_enabled = true
     self:SetIcon(iconEAIButtonOn)
-    self:SetRolloverTitle(T{StringIdBase + 4, "Disable Elevator A.I."})
-    self:SetRolloverText(T{StringIdBase + 5, "Disable the Elevator A.I."})
-    elevator.description = T{StringIdBase + 6, "Space Elevator - Elevator A.I. Running"}
+    EAIupdateButtonRollover(self)
   end -- option == "enable"
 end --EnableEAI()
 
@@ -151,7 +168,7 @@ function OnMsg.ClassesBuilt()
   local PlaceObj = PlaceObj
   local EAIButtonID1 = "ElevatorAIButton-01"
   local EAISectionID1 = "ElevatorAISection-01"
-  local EAIControlVer = "v1.2"
+  local EAIControlVer = "v1.3"
   local XT = XTemplates.ipBuilding[1]
 
   if lf_print then print("Loading Classes in EAI_2Panels.lua") end
@@ -185,12 +202,19 @@ function OnMsg.ClassesBuilt()
       "__condition", function (parent, context) return g_EAIloaded and (not context.demolishing) and (not context.destroyed) and (not context.bulldozed) end,
       "__template", "InfopanelButton",
       "Icon", iconEAIButtonNA,
-      "RolloverTitle", T{StringIdBase + 7, "Install Elevator A.I."}, -- Title Used for sections only
-      "RolloverText", T{StringIdBase + 8, "Install the Elevator A.I. for this Space Elevator."},
+      --"RolloverTitle", T{StringIdBase + 7, "Install Elevator A.I."}, -- Title Used for sections only
+      --"RolloverText", T{StringIdBase + 8, "Install the Elevator A.I. for this Space Elevator."},
       "RolloverHint", T{StringIdBase + 13, "<left_click> Activate<newline>Ctrl+<left_click> Uninstall A.I. from this Elevator"},
       "OnContextUpdate", function(self, context)
       	local elevator = context
       	local selfId   = sformat("ip%s", self.Id)
+
+      	--set the buton rollover text
+      	if not self.cxRolloverText then
+      		EAIupdateButtonRollover(self)
+      		self.cxRolloverText = true
+      	end -- if not self.cxRolloverText
+
       	-- install reference to context
       	if not self[selfId] then
       		self[selfId] = true
@@ -233,11 +257,6 @@ function OnMsg.ClassesBuilt()
           end -- if elevator.EAI_export_prevstatus
           self.EAI_RareMetal_ExportButton:SetEnabled(true)   -- enable button and return manual control
         end  -- export_threshold > 0
-
-        if (lf_printDebug) and (not self.exDebug) then
-        	self.exDebug = true
-       		ex(self)
-       	end -- debug
 
        	-- Set the install condition
        	if not elevator.EAI_installed and not self.cxDesc then
