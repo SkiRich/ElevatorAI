@@ -1,8 +1,14 @@
 return PlaceObj('ModDef', {
 	'title', "Elevator A.I.",
-	'description', "Elevator A.I.\nv2.2.1 - Nov 2nd, 2018\nby SKiRich",
-	'image', "Images/ElevatorAILogo.png",
-	'last_changes', "v2.2.1 Nov 2nd, 2018\n- Minor bug fix around notifications",
+	'description', "Elevator A.I.\nv2.2.2\nby SKiRich",
+	'image', "ElevatorAILogo.png",
+	'last_changes', "v2.2.2 Dec 15th, 2018",
+	'ignore_files', {
+		"*.git/*",
+		"*.svn/*",
+		"*.gitignore",
+		"*Images/*",
+	},
 	'id', "PuW72FR",
 	'steam_id', "1504430797",
 	'author', "SkiRich",

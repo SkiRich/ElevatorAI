@@ -1,4 +1,15 @@
 # Elevator A.I Changelog
+## v2.2.2 12/16/2018 1:30:32 AM
+#### Changed
+- xTemplate for button
+
+#### Added
+- EAIupdateButtonRollover(button) - consolidated logic for rollovertext into a function
+
+#### Fixed Issues
+- Rolover text not updating when pressed and ip left open
+
+--------------------------------------------------------
 ## v2.2.1 11/02/2018 11:32:55 PM
 - Gagarin Updates
 #### Changed
