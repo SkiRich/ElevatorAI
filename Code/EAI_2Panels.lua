@@ -66,6 +66,7 @@ local function AIalreadyInstalledPopup()
             choice1 = T{StringIdBase + 2, "Show me where the Elevator A.I is installed"},
             choice2 = T{StringIdBase + 3, "Close Window"},
               image = "UI/Messages/artificial_intelligence_mystery_01.tga",
+              start_minimized = false,
         } -- params
         local choice = WaitPopupNotification(false, params)
         if choice == 1 then
