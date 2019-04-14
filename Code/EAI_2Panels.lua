@@ -380,7 +380,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 0, 20, 0),
               "TextHAlign", "right",
             }),
-	   	  }), -- end of idEAIfrequencySection
+	   	  }), -- end of idEAIstatusSection
 
       	 -- Frequency Section
 			   PlaceObj('XTemplateWindow', {
