@@ -11,7 +11,7 @@ local lf_print      = false  -- Setup debug printing in local file
 
 
 local ModDir = CurrentModPath
-local StringIdBase = 1776300000 -- Elevator AI, Next number = 37
+local StringIdBase = 1776300000 -- Elevator AI, Next number = 39
 local iconEAIButtonNA    = ModDir.."UI/Icons/buttonEAInotinstalled.png"
 local iconEAIButtonOn    = ModDir.."UI/Icons/buttonEAIon.png"
 local iconEAIButtonOff   = ModDir.."UI/Icons/buttonEAIoff.png"
@@ -84,6 +84,7 @@ local function InitEAI(elevator)
 	elevator.EAI_restock_Polymers     = 0
 	elevator.EAI_restock_MachineParts = 0
 	elevator.EAI_restock_Electronics  = 0
+	elevator.EAI_restock_Seeds        = 0
 	elevator.EAI_restock_frequency    = 1
 	elevator.EAI_export_threshold     = 0      -- the amount to trigger and export of rare metals
 	elevator.EAI_schedule             = ""
@@ -168,7 +169,7 @@ function OnMsg.ClassesBuilt()
   local PlaceObj = PlaceObj
   local EAIButtonID1 = "ElevatorAIButton-01"
   local EAISectionID1 = "ElevatorAISection-01"
-  local EAIControlVer = "v1.3"
+  local EAIControlVer = "v1.4"
   local XT = XTemplates.ipBuilding[1]
 
   if lf_print then print("Loading Classes in EAI_2Panels.lua") end
@@ -648,6 +649,44 @@ function OnMsg.ClassesBuilt()
     				  "Text", T{StringIdBase + 907, "<electronics(EAI_restock_Electronics)>"},
             }),
 	   	  }), -- end of idEAIelectronicsSection
+
+---------------------
+      	 -- Seeds Section
+			   PlaceObj('XTemplateWindow', {
+	   			'comment', "Seeds Section",
+          "Id", "idEAIseedsSection",
+	   			"IdNode", true,
+	   			"__condition", function (parent, context)
+	   				               if context.EAI_restock_Seeds and IsTechResearched("MartianVegetation") then return true end
+	   				             end,
+	   			"Margins", box(0, 0, 0, -5),
+    			"RolloverTemplate", "Rollover",
+    			"RolloverTitle", T{StringIdBase + 37, "Seeds"},
+          "RolloverText", T{StringIdBase + 38, "Select the threshold of seeds in the colony Elevator A.I. will check before ordering more seeds.  The threshold is also the reorder amount."},
+	   		 },{
+          	-- Seeds Slider Section
+            PlaceObj("XTemplateTemplate", {
+              "__template", "InfopanelSlider",
+              "Id", "idEAIseedsSlider",
+              "Margins", box(0, 15, 0, 15),
+              "BindTo", "EAI_restock_Seeds",
+              "Min", 0,
+              "Max", 200000,
+    			  	"StepSize", 1000, --change per movement
+            }),
+    				PlaceObj('XTemplateTemplate', {
+    					"__template", "InfopanelText",
+    					"Id", "idEAIseedsSliderText",
+    					"Dock", "right",
+    					"Margins", box(0, 0, 0, 0),
+    					"Padding", box(0, 0, 0, 0),
+    					"MinWidth", "45",
+    					"TextHAlign", "right",
+    				  "Text", T{StringIdBase + 908, "<seeds(EAI_restock_Seeds)>"},
+            }),
+	   	  }), -- end of idEAIseedsSection
+
+
       }) -- End PlaceObject XTemplate
     ) --table.insert
 
