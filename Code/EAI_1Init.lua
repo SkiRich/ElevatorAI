@@ -43,7 +43,7 @@ local EAInotices       = {} -- variable table to keep track of all notices
 -- blacklisted -- the allowed status of the resource based on gameplay, set at time of request; default = false
 -- elevatordiscount -- the discount applied from the elevator price_mod
 -- sponsordiscount  -- the discount applied from the sponsor defaults
-local RestockingResources = {"Concrete", "Metals", "Food", "Polymers", "MachineParts", "Electronics"}
+local RestockingResources = {"Concrete", "Metals", "Food", "Polymers", "MachineParts", "Electronics", "Seeds"}
 local EAI_restockQtemplate = {}
 for _, resource in pairs(RestockingResources) do
 	EAI_restockQtemplate[resource] = {restock = 0, instock = 0, order = 0, processed = 0, itemprice = 0, unitprice = 0, unitpack = 0, weight = 0, elevatorkey = "", blacklisted = false, elevatordiscount = 0, sponsordiscount = 0}
@@ -59,6 +59,7 @@ local EAI_cargoTemplate = {
 	{amount = 0, class = "Polymers"},
 	{amount = 0, class = "MachineParts"},
 	{amount = 0, class = "Electronics"}
+	{amount = 0, class = "Seeds"}
 } --EAI_cargo
 --]]
 
