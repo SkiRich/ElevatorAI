@@ -3,7 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated Dec 15th, 2018
+-- Updated April 21st, 2019
 
 local lf_printDebug = false  -- Used to print anything designated as debug
 local lf_print      = false  -- Setup debug printing in local file
@@ -169,7 +169,7 @@ function OnMsg.ClassesBuilt()
   local PlaceObj = PlaceObj
   local EAIButtonID1 = "ElevatorAIButton-01"
   local EAISectionID1 = "ElevatorAISection-01"
-  local EAIControlVer = "v1.4"
+  local EAIControlVer = "v1.5"
   local XT = XTemplates.ipBuilding[1]
 
   if lf_print then print("Loading Classes in EAI_2Panels.lua") end
@@ -437,8 +437,8 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_export_threshold",
               "Min", 0,
-              "Max", 500000,
-    			  	"StepSize", 5000, --change per movement
+              "Max", 1000000,
+    			  	"StepSize", 10000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
     					"__template", "InfopanelText",
