@@ -1,4 +1,10 @@
 # Elevator A.I Changelog
+## 2.3.0 04/17/2019 6:57:25 PM
+
+#### Added
+- Seeds for Armstrong Green Planet Release
+
+--------------------------------------------------------
 ## v2.2.2 12/16/2018 1:30:32 AM
 #### Changed
 - xTemplate for button
