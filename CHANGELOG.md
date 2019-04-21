@@ -1,4 +1,9 @@
 # Elevator A.I Changelog
+## version 04/21/2019 2:25:02 AM
+#### Changed
+- Rare metals slider step to 10 and max to 1000
+
+--------------------------------------------------------
 ## 2.3.0 04/17/2019 6:57:25 PM
 
 #### Added
