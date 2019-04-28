@@ -3,7 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated April 21st, 2019
+-- Updated April 25th, 2019
 
 local lf_printDebug = false  -- Used to print anything designated as debug
 local lf_print      = false  -- Setup debug printing in local file
@@ -20,6 +20,16 @@ local iconEAINotice   = ModDir.."UI/Icons/noticeEAIIcon.png"
 local iconClock       = ModDir.."UI/Icons/iconClock.png"
 local imageClock      = table.concat({"<image ", iconClock, " 1500>"})
 local sformat         = string.format
+
+-- maximum slider values
+local sliderPrecMetals  = 1000 * const.ResourceScale
+local sliderConcrete    = 80   * const.ResourceScale
+local sliderMetals      = 80   * const.ResourceScale
+local sliderFood        = 300  * const.ResourceScale
+local sliderPolymers    = 300  * const.ResourceScale
+local sliderMachinePts  = 300  * const.ResourceScale
+local sliderElectronics = 300  * const.ResourceScale
+local sliderSeeds       = 300  * const.ResourceScale
 
 g_EAIloaded = true -- for section and button conditionals in case templates stuck in a savegame without mod.
 
@@ -169,7 +179,7 @@ function OnMsg.ClassesBuilt()
   local PlaceObj = PlaceObj
   local EAIButtonID1 = "ElevatorAIButton-01"
   local EAISectionID1 = "ElevatorAISection-01"
-  local EAIControlVer = "v1.5"
+  local EAIControlVer = "v2.0"
   local XT = XTemplates.ipBuilding[1]
 
   if lf_print then print("Loading Classes in EAI_2Panels.lua") end
@@ -437,7 +447,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_export_threshold",
               "Min", 0,
-              "Max", 1000000,
+              "Max", sliderPrecMetals,
     			  	"StepSize", 10000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -470,7 +480,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Concrete",
               "Min", 0,
-              "Max", 80000,
+              "Max", sliderConcrete,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -503,7 +513,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Metals",
               "Min", 0,
-              "Max", 80000,
+              "Max", sliderMetals,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -536,7 +546,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Food",
               "Min", 0,
-              "Max", 200000,
+              "Max", sliderFood,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -569,7 +579,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Polymers",
               "Min", 0,
-              "Max", 200000,
+              "Max", sliderPolymers,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -602,7 +612,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_MachineParts",
               "Min", 0,
-              "Max", 200000,
+              "Max", sliderMachinePts,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -635,7 +645,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Electronics",
               "Min", 0,
-              "Max", 200000,
+              "Max", sliderElectronics,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -650,7 +660,6 @@ function OnMsg.ClassesBuilt()
             }),
 	   	  }), -- end of idEAIelectronicsSection
 
----------------------
       	 -- Seeds Section
 			   PlaceObj('XTemplateWindow', {
 	   			'comment', "Seeds Section",
@@ -671,7 +680,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Seeds",
               "Min", 0,
-              "Max", 200000,
+              "Max", sliderSeeds,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {

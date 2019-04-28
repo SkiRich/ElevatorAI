@@ -1,5 +1,11 @@
 # Elevator A.I Changelog
-## version 04/21/2019 2:25:02 AM
+## v2.4.0 04/25/2019 10:50:10 PM
+#### Changed
+- Using variables for sliders
+- Increased most sliders to 300 max orders
+
+--------------------------------------------------------
+## v2.3.1 04/21/2019 2:25:02 AM
 #### Changed
 - Rare metals slider step to 10 and max to 1000
 
