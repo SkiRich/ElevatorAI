@@ -1,4 +1,10 @@
 # Elevator A.I Changelog
+## v2.4.1 07/06/2019 1:33:05 PM
+
+#### Added
+- check on LoadGame() for missing seeds variable in already built elevators
+
+--------------------------------------------------------
 ## v2.4.0 04/25/2019 10:50:10 PM
 #### Changed
 - Using variables for sliders

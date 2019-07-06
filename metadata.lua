@@ -1,8 +1,8 @@
 return PlaceObj('ModDef', {
 	'title', "Elevator A.I.",
-	'description', "Elevator A.I.\nv2.4.0\nby SKiRich",
+	'description', "Elevator A.I.\nv2.4.1\nby SKiRich",
 	'image', "ElevatorAILogo.png",
-	'last_changes', "v2.2.2 April 24th, 2019",
+	'last_changes', "v2.4.1 July 6th, 2019",
 	'ignore_files', {
 		"*.git/*",
 		"*.svn/*",
@@ -14,7 +14,7 @@ return PlaceObj('ModDef', {
 	'pops_desktop_uuid', "61f8d83b-4ba6-411d-be5a-792fe6d95b77",
 	'pops_any_uuid', "06f67c2e-9c98-4985-8a05-67558e42296e",
 	'author', "SkiRich",
-	'version', 29,
+	'version', 32,
 	'lua_revision', 233360,
 	'saved_with_revision', 244275,
 	'code', {
@@ -47,7 +47,7 @@ return PlaceObj('ModDef', {
 			language = "Russian",
 		},
 	},
-	'saved', 1557985363,
+	'saved', 1557986086,
 	'screenshot1', "Images/ElevatorAILogo.png",
 	'screenshot2', "Images/EAIdisabled.png",
 	'screenshot3', "Images/EAIip1.png",
