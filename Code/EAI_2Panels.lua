@@ -702,3 +702,9 @@ function OnMsg.ClassesBuilt()
   end --if not XT.EAI template check
 
 end --OnMsg.ClassesBuilt()
+
+
+function OnMsg.LoadGame()
+	-- Add missing variables to existing elevators if already built -- EAI_restock_Seeds
+	if g_EAI and g_EAI.elevator and (not g_EAI.elevator.EAI_restock_Seeds) then g_EAI.elevator.EAI_restock_Seeds = 0 end
+end -- OnMsg.LoadGame()
