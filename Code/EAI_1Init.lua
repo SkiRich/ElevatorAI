@@ -3,7 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated Nov 2nd, 2018
+-- Updated August 22nd, 2019
 
 local lf_debug   = false  -- used only for certain ex() instances
 local lf_printcf = false  -- used to print class fires
@@ -134,27 +134,34 @@ local function EAIcheckColonyStock(debugcode)
 
   -- load up restockQ
   for resource, item in pairs(restockQ) do
+  	local itemError = false
   	local itemdef = table.find_value(ResDef, "id", resource)  -- load up the resources games defaults and properties
+  	-- check for bad resource def
+  	if type(itemdef) == "nil" then
+  		ModLog(string.format("NOTICE - EAI found a missing resource definition - %s - This item will not be ordered.", resource))
+  		item.error = 0
+  	end -- if type
+
   	item.elevatorkey = string.format("EAI_restock_%s", resource) -- duplicate the slider key
   	item.blacklisted = EAIisResourceBlacklisted(resource)
   	item.elevatordiscount = elevator.price_mod
   	item.sponsordiscount  = sponsor.CostModifierPercent
-  	item.restock  = (not item.blacklisted and MulDivRound(1, elevator[item.elevatorkey], 1000)) or 0 -- make restock = 0 if blacklisted
+  	item.restock  = item.error or (not item.blacklisted and MulDivRound(1, elevator[item.elevatorkey], 1000)) or 0 -- make restock = 0 if blacklisted
   	item.instock  = MulDivRound(1, colonystock[resource], 1000) -- calc the resources on hand in the colony
     if (item.instock < item.restock) or debugcode then
     	-- if colony stock is lower than threshold or debugging, order the threshold amount
     	item.order = item.restock
     	hasOrders = true  -- indicate this restockQ has at least one order
     end -- if ordering
-  	item.unitprice = itemdef.price
-  	item.unitpack = itemdef.pack
+  	item.unitprice = item.error or itemdef.price
+  	item.unitpack = item.error or itemdef.pack
   	-- calc price per item with elevator and sponsor discounts
   	-- discounts are not % off but modifier labels for % of original price to charge
-  	local peritemprice = MulDivRound(1, itemdef.price, itemdef.pack) -- per item list price
+  	local peritemprice = item.error or MulDivRound(1, itemdef.price, itemdef.pack) -- per item list price
   	peritemprice = MulDivRound(peritemprice, item.elevatordiscount, 100)  -- discount price using elevator discount see XPGMission.lua
   	peritemprice = MulDivRound(peritemprice, item.sponsordiscount, 100) -- discount price using sponsor discount see XPGMission.lua
   	item.itemprice = peritemprice
-  	item.weight   = MulDivRound(1, itemdef.kg, itemdef.pack) -- item weight per item
+  	item.weight    = item.error or MulDivRound(1, itemdef.kg, itemdef.pack) -- item weight per item
   end -- for resource, item -- end load up restockQ
 
   if not hasOrders then restockQ = false end -- return false for no orders
