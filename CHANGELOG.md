@@ -1,4 +1,15 @@
 # Elevator A.I Changelog
+## v2.4.2 08/22/2019 11:19:31 PM
+#### Changed
+- function EAIcheckColonyStock(debugcode)
+
+#### Added
+- added code to function EAIcheckColonyStock(debugcode) to check for a bad resource definition
+
+#### Fixed Issues
+- bad resource definitions causes errors in the restock thread failing to order anything
+
+--------------------------------------------------------
 ## v2.4.1 07/06/2019 1:33:05 PM
 
 #### Added
