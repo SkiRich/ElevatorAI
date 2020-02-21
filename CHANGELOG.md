@@ -1,4 +1,27 @@
 # Elevator A.I Changelog
+## 3.0.0 02/21/2020 5:04:43 PM
+#### Changed
+- xtemplate version to v3.0
+- xtemplate max slider references to global var
+
+
+#### Added
+- GlobalVar for persistent dynamic sliders - g_EAIsliderCurrent
+- global var for slider references - g_EAIslider
+
+#### Removed
+
+#### Fixed Issues
+
+#### Open Issues
+
+#### Deprecated
+- original static local max slider vars
+
+#### Todo
+- Mod Config file and loadup
+
+--------------------------------------------------------
 ## v2.4.2 08/22/2019 11:19:31 PM
 #### Changed
 - function EAIcheckColonyStock(debugcode)
