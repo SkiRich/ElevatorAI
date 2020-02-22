@@ -1,8 +1,8 @@
 return PlaceObj('ModDef', {
 	'title', "Elevator A.I.",
-	'description', "Elevator A.I.\nv2.4.2\nby SKiRich",
+	'description', "Elevator A.I.\nv3.0\nby SKiRich",
 	'image', "ElevatorAILogo.png",
-	'last_changes', "v2.4.2 August 22nd, 2019",
+	'last_changes', "v3.0 Feb 21st, 2020",
 	'ignore_files', {
 		"*.git/*",
 		"*.svn/*",
@@ -20,6 +20,7 @@ return PlaceObj('ModDef', {
 	'code', {
 		"Code/EAI_1Init.lua",
 		"Code/EAI_2Panels.lua",
+		"Code/EAI_3ModConfig.lua",
 	},
 	'loctables', {
 		{

@@ -3,7 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated April 25th, 2019
+-- Updated Feb 21st, 2020
 
 local lf_printDebug = false  -- Used to print anything designated as debug
 local lf_print      = false  -- Setup debug printing in local file
@@ -11,7 +11,7 @@ local lf_print      = false  -- Setup debug printing in local file
 
 
 local ModDir = CurrentModPath
-local StringIdBase = 1776300000 -- Elevator AI, Next number = 39
+local StringIdBase = 1776300000 -- Elevator AI, Next number = 39 , starts at 0 to 99
 local iconEAIButtonNA    = ModDir.."UI/Icons/buttonEAInotinstalled.png"
 local iconEAIButtonOn    = ModDir.."UI/Icons/buttonEAIon.png"
 local iconEAIButtonOff   = ModDir.."UI/Icons/buttonEAIoff.png"
@@ -21,7 +21,35 @@ local iconClock       = ModDir.."UI/Icons/iconClock.png"
 local imageClock      = table.concat({"<image ", iconClock, " 1500>"})
 local sformat         = string.format
 
+-- globalvar for persistent slider values
+GlobalVar("g_EAIsliderCurrent",
+		{
+		 PrecMetals  = 1000 * const.ResourceScale,
+		 Concrete    = 80   * const.ResourceScale,
+		 Metals      = 80   * const.ResourceScale,
+		 Food        = 300  * const.ResourceScale,
+		 Polymers    = 300  * const.ResourceScale,
+		 MachinePts  = 300  * const.ResourceScale,
+		 Electronics = 300  * const.ResourceScale,
+		 Seeds       = 300  * const.ResourceScale,
+		}
+)-- g_EAIsliderCurrent
+
+-- slider defaults, set high, will reset on loadgame to normal values after modconfig load
+g_EAIslider =
+		{
+		 PrecMetals  = 10000 * const.ResourceScale,
+		 Concrete    = 10000 * const.ResourceScale,
+		 Metals      = 10000 * const.ResourceScale,
+		 Food        = 10000 * const.ResourceScale,
+		 Polymers    = 10000 * const.ResourceScale,
+		 MachinePts  = 10000 * const.ResourceScale,
+		 Electronics = 10000 * const.ResourceScale,
+		 Seeds       = 10000 * const.ResourceScale,
+		} -- g_EAIslider
+
 -- maximum slider values
+-- original code not used anymore
 local sliderPrecMetals  = 1000 * const.ResourceScale
 local sliderConcrete    = 80   * const.ResourceScale
 local sliderMetals      = 80   * const.ResourceScale
@@ -179,7 +207,7 @@ function OnMsg.ClassesBuilt()
   local PlaceObj = PlaceObj
   local EAIButtonID1 = "ElevatorAIButton-01"
   local EAISectionID1 = "ElevatorAISection-01"
-  local EAIControlVer = "v2.0"
+  local EAIControlVer = "v3.0"
   local XT = XTemplates.ipBuilding[1]
 
   if lf_print then print("Loading Classes in EAI_2Panels.lua") end
@@ -447,7 +475,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_export_threshold",
               "Min", 0,
-              "Max", sliderPrecMetals,
+              "Max", g_EAIslider.PrecMetals,
     			  	"StepSize", 10000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -480,7 +508,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Concrete",
               "Min", 0,
-              "Max", sliderConcrete,
+              "Max", g_EAIslider.Concrete,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -513,7 +541,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Metals",
               "Min", 0,
-              "Max", sliderMetals,
+              "Max", g_EAIslider.Metals,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -546,7 +574,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Food",
               "Min", 0,
-              "Max", sliderFood,
+              "Max", g_EAIslider.Food,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -579,7 +607,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Polymers",
               "Min", 0,
-              "Max", sliderPolymers,
+              "Max", g_EAIslider.Polymers,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -612,7 +640,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_MachineParts",
               "Min", 0,
-              "Max", sliderMachinePts,
+              "Max", g_EAIslider.MachinePts,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -645,7 +673,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Electronics",
               "Min", 0,
-              "Max", sliderElectronics,
+              "Max", g_EAIslider.Electronics,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {
@@ -680,7 +708,7 @@ function OnMsg.ClassesBuilt()
               "Margins", box(0, 15, 0, 15),
               "BindTo", "EAI_restock_Seeds",
               "Min", 0,
-              "Max", sliderSeeds,
+              "Max", g_EAIslider.Seeds,
     			  	"StepSize", 1000, --change per movement
             }),
     				PlaceObj('XTemplateTemplate', {

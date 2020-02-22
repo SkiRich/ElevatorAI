@@ -7,6 +7,10 @@ PlaceObj('ModItemCode', {
 	'name', "EAI_2Panels",
 	'FileName', "Code/EAI_2Panels.lua",
 }),
+PlaceObj('ModItemCode', {
+	'name', "EAI_3ModConfig",
+	'FileName', "Code/EAI_3ModConfig.lua",
+}),
 PlaceObj('ModItemLocTable', {
 	'language', "French",
 	'filename', "Locale/FR-fr.csv",
