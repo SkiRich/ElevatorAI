@@ -11,7 +11,7 @@ local lf_print      = false  -- Setup debug printing in local file
 
 
 local ModDir = CurrentModPath
-local StringIdBase = 1776300000 -- Elevator AI, Next number = 39
+local StringIdBase = 1776300000 -- Elevator AI, Next number = 39 , starts at 0 to 99
 local iconEAIButtonNA    = ModDir.."UI/Icons/buttonEAInotinstalled.png"
 local iconEAIButtonOn    = ModDir.."UI/Icons/buttonEAIon.png"
 local iconEAIButtonOff   = ModDir.."UI/Icons/buttonEAIoff.png"
@@ -24,20 +24,6 @@ local sformat         = string.format
 -- globalvar for persistent slider values
 GlobalVar("g_EAIsliderCurrent",
 		{
-		 PrecMetals  = 0,
-		 Concrete    = 0,
-		 Metals      = 0,
-		 Food        = 0,
-		 Polymers    = 0,
-		 MachinePts  = 0,
-		 Electronics = 0,
-		 Seeds       = 0,
-		}
-)-- g_EAIsliderCurrent
-
--- slider defaults
-g_EAIslider =
-		{
 		 PrecMetals  = 1000 * const.ResourceScale,
 		 Concrete    = 80   * const.ResourceScale,
 		 Metals      = 80   * const.ResourceScale,
@@ -46,6 +32,20 @@ g_EAIslider =
 		 MachinePts  = 300  * const.ResourceScale,
 		 Electronics = 300  * const.ResourceScale,
 		 Seeds       = 300  * const.ResourceScale,
+		}
+)-- g_EAIsliderCurrent
+
+-- slider defaults, set high, will reset on loadgame to normal values after modconfig load
+g_EAIslider =
+		{
+		 PrecMetals  = 10000 * const.ResourceScale,
+		 Concrete    = 10000 * const.ResourceScale,
+		 Metals      = 10000 * const.ResourceScale,
+		 Food        = 10000 * const.ResourceScale,
+		 Polymers    = 10000 * const.ResourceScale,
+		 MachinePts  = 10000 * const.ResourceScale,
+		 Electronics = 10000 * const.ResourceScale,
+		 Seeds       = 10000 * const.ResourceScale,
 		} -- g_EAIslider
 
 -- maximum slider values

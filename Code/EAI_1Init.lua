@@ -19,6 +19,7 @@ GlobalVar("g_EAI", function() return {
 	elevator = false,
 } end) -- g_EAI
 
+
 local ModDir = CurrentModPath
 local steam_id = "1504430797"
 local mod_name = "Elevator A.I."
