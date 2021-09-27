@@ -1,4 +1,27 @@
 # Elevator A.I Changelog
+## [v3.1.0] 09/26/21 8:12:56 PM
+#### Changed
+- Picard version bump
+- UICity.funding to UIColony.funds.funding
+- changed panel control ver
+
+
+#### Added
+- MainMapID to all the custom notifications
+- MainCity to GatherResourceOverviewData(colonystock, MainCity)
+- map_id ot g_EAI global var
+
+#### Removed
+
+#### Fixed Issues
+
+#### Open Issues
+
+#### Deprecated
+
+#### Todo
+
+--------------------------------------------------------
 ## 3.0.0 02/21/2020 5:04:43 PM
 #### Changed
 - xtemplate version to v3.0

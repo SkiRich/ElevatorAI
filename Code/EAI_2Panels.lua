@@ -3,7 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated Feb 21st, 2020
+-- Updated Sept 26th, 2021
 
 local lf_printDebug = false  -- Used to print anything designated as debug
 local lf_print      = false  -- Setup debug printing in local file
@@ -164,6 +164,7 @@ local function ConfigureEAI(self, option)
     elevator.EAI_enabled = true
     g_EAI.GUID = elevator.EAI_GUID
     g_EAI.elevator = elevator
+    g_EAI.map_id = elevator:GetMapID()
     EAISection:SetVisible(true)
     self:SetIcon(iconEAIButtonOn)
     EAIupdateButtonRollover(self)
@@ -176,6 +177,7 @@ local function ConfigureEAI(self, option)
     elevator:EAIRestoreExportStorage()
     g_EAI.GUID = false
     g_EAI.elevator = false
+    g_EAI.map_id = false
     elevator.EAI_installed = false
     elevator.EAI_enabled = false
     EAISection:SetVisible(false)
@@ -207,7 +209,7 @@ function OnMsg.ClassesBuilt()
   local PlaceObj = PlaceObj
   local EAIButtonID1 = "ElevatorAIButton-01"
   local EAISectionID1 = "ElevatorAISection-01"
-  local EAIControlVer = "v3.0"
+  local EAIControlVer = "v310"
   local XT = XTemplates.ipBuilding[1]
 
   if lf_print then print("Loading Classes in EAI_2Panels.lua") end

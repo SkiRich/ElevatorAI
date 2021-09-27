@@ -1,8 +1,8 @@
 return PlaceObj('ModDef', {
 	'title', "Elevator A.I.",
-	'description', "Elevator A.I.\nv3.0\nby SKiRich",
+	'description', "Elevator A.I.\nv3.1.0 Sept 26th, 2021\nby SKiRich\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=1504430797",
 	'image', "ElevatorAILogo.png",
-	'last_changes', "v3.0 Feb 21st, 2020",
+	'last_changes', "v3.1.0 Sept 26th, 2021",
 	'ignore_files', {
 		"*.git/*",
 		"*.svn/*",
@@ -14,9 +14,9 @@ return PlaceObj('ModDef', {
 	'pops_desktop_uuid', "61f8d83b-4ba6-411d-be5a-792fe6d95b77",
 	'pops_any_uuid', "06f67c2e-9c98-4985-8a05-67558e42296e",
 	'author', "SkiRich",
-	'version', 41,
-	'lua_revision', 233360,
-	'saved_with_revision', 249143,
+	'version', 45,
+	'lua_revision', 1007000,
+	'saved_with_revision', 1008107,
 	'code', {
 		"Code/EAI_1Init.lua",
 		"Code/EAI_2Panels.lua",
@@ -48,7 +48,7 @@ return PlaceObj('ModDef', {
 			language = "Russian",
 		},
 	},
-	'saved', 1582356091,
+	'saved', 1632707013,
 	'screenshot1', "Images/ElevatorAILogo.png",
 	'screenshot2', "Images/EAIdisabled.png",
 	'screenshot3', "Images/EAIip1.png",
