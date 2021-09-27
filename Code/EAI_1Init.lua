@@ -3,7 +3,7 @@
 -- All rights reserved, duplication and modification prohibited.
 -- You may not copy it, package it, or claim it as your own.
 -- Created Sept 5th, 2018
--- Updated August 22nd, 2019
+-- Updated Sept 26th, 2021
 
 local lf_debug   = false  -- used only for certain ex() instances
 local lf_printcf = false  -- used to print class fires
@@ -17,6 +17,7 @@ g_EAInoticeDismissTime = 10000  -- 10 seconds the dismiss time for notifications
 GlobalVar("g_EAI", function() return {
 	GUID = false,
 	elevator = false,
+	map_id = false,
 } end) -- g_EAI
 
 
@@ -131,7 +132,7 @@ local function EAIcheckColonyStock(debugcode)
   local EAIisResourceBlacklisted = EAIisResourceBlacklisted
   -- get realtime colony resource data
   local colonystock = {}
-  GatherResourceOverviewData(colonystock) -- use this instead of ResourceOverviewObj since ResourceOverviewObj thread does not update fast enough
+  GatherResourceOverviewData(colonystock, MainCity) -- use this instead of ResourceOverviewObj since ResourceOverviewObj thread does not update fast enough
 
   -- load up restockQ
   for resource, item in pairs(restockQ) do
@@ -243,8 +244,7 @@ function EAIRestock(debugcode, debugfunds)
 	local ordersRemaining    = 0
 	local totalmanifestcost  = 0
 	local reasoncode  = "No restock needed"
-	local UICity      = UICity
-	local colonyfunds = debugfunds or (UICity.funding or 0) -- debugfunds is used for testing only UICity.funding is cash on hand.
+	local colonyfunds = debugfunds or (UIColony.funds.funding or 0) -- debugfunds is used for testing only UIColony.funds.funding is cash on hand.
 	local notifyOnOrderStart = true -- check to see if we already sent a notification on order processing start
 
   -- Check if elevator is working and AI installed and enabled
@@ -255,13 +255,13 @@ function EAIRestock(debugcode, debugfunds)
 	if g_Consts.SupplyMissionsEnabled ~= 1 then
 		if not EAInotices.prohibited then
 			EAInotices.prohibited = true
-	  	AddCustomOnScreenNotification("EAI_Notice", T{StringIdBase + 100, "Elevator A.I Paused"}, T{StringIdBase + 101, "Elevator A.I. is prohibited from operating. Resupply is disabled."}, iconEAINoticeRed, nil, {priority = "Important", cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime})
+	  	AddCustomOnScreenNotification("EAI_Notice", T{StringIdBase + 100, "Elevator A.I Paused"}, T{StringIdBase + 101, "Elevator A.I. is prohibited from operating. Resupply is disabled."}, iconEAINoticeRed, nil, {priority = "Important", cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime}, MainMapID)
 		  PlayFX("UINotificationResearchComplete", g_EAI.elevator)
 		end -- if not EAInotice.prohibited
 		return ordersuccess, ordersRemaining, totalmanifestcost, "Mission resupply is disabled."
 	elseif g_Consts.SupplyMissionsEnabled == 1 and EAInotices.prohibited then
 		EAInotices.prohibited = nil
-	  AddCustomOnScreenNotification("EAI_Notice", T{StringIdBase + 102, "Elevator A.I Running"}, T{StringIdBase + 103, "Elevator A.I. is running."}, iconEAINotice, nil, {cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime})
+	  AddCustomOnScreenNotification("EAI_Notice", T{StringIdBase + 102, "Elevator A.I Running"}, T{StringIdBase + 103, "Elevator A.I. is running."}, iconEAINotice, nil, {cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime}, MainMapID)
 	  PlayFX("UINotificationResearchComplete", g_EAI.elevator)
 	end -- if g_Consts.SupplyMissionsEnabled ~= 1
 
@@ -304,13 +304,13 @@ function EAIRestock(debugcode, debugfunds)
   -- there is at least one cargo manifest batch so if nothing is needed then all items show zero.
   -- this will go through the motions but not send the elevator and set the ordersuccess to true
   for idx, CargoOrder in pairs(CargoOrderManifest) do
-  	colonyfunds = debugfunds or (UICity.funding or 0) -- if testing funds then use debugfunds
+  	colonyfunds = debugfunds or (UIColony.funds.funding or 0) -- if testing funds then use debugfunds
   	if CargoOrder.cost <= colonyfunds then
   		-- if enough funds to reorder cargo
   		if notifyOnOrderStart and ordersRemaining > 0 then
   			notifyOnOrderStart = false
   			-- send notification on order start and if there are items to order -- just once per CargoOrderManifest
-  			AddCustomOnScreenNotification("EAI_Notice_Order", T{StringIdBase + 104, "Elevator A.I Order"}, T{StringIdBase + 105, "Elevator A.I is restocking the colony."}, iconEAINotice, nil, {cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime})
+  			AddCustomOnScreenNotification("EAI_Notice_Order", T{StringIdBase + 104, "Elevator A.I Order"}, T{StringIdBase + 105, "Elevator A.I is restocking the colony."}, iconEAINotice, nil, {cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime}, MainMapID)
   		  PlayFX("UINotificationResearchComplete", g_EAI.elevator)
   		end -- if notifyOnOrderStart
   		if not debugcode then elevator:OrderResupply(CargoOrder.cargo, CargoOrder.cost) end -- if testing do not actually order anything
@@ -327,11 +327,11 @@ function EAIRestock(debugcode, debugfunds)
   -- change ordersuccess reasoncode and notify
   if ordersuccess and ordersRemaining > 0 then
   	reasoncode = "Not enough funds for entire order but partial orders filled."
-  	AddCustomOnScreenNotification("EAI_Notice_Order", T{StringIdBase + 106, "Elevator A.I Order Status"}, T{StringIdBase + 107, "Elevator A.I ran out of funds during reorder.  Some orders have been filled."}, iconEAINotice, nil, {priority = "Important", cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime})
+  	AddCustomOnScreenNotification("EAI_Notice_Order", T{StringIdBase + 106, "Elevator A.I Order Status"}, T{StringIdBase + 107, "Elevator A.I ran out of funds during reorder.  Some orders have been filled."}, iconEAINotice, nil, {priority = "Important", cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime}, MainMapID)
     PlayFX("UINotificationResearchComplete", g_EAI.elevator)
   elseif not ordersuccess and ordersRemaining > 0 then
   	reasoncode = "No orders filled.  Not enough funds."
-  	AddCustomOnScreenNotification("EAI_Notice_Order", T{StringIdBase + 106, "Elevator A.I Order Status"}, T{StringIdBase + 108, "No orders processed. Not enough funds."}, iconEAINoticeRed, nil, {priority = "Important", cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime})
+  	AddCustomOnScreenNotification("EAI_Notice_Order", T{StringIdBase + 106, "Elevator A.I Order Status"}, T{StringIdBase + 108, "No orders processed. Not enough funds."}, iconEAINoticeRed, nil, {priority = "Important", cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime}, MainMapID)
     PlayFX("UINotificationResearchComplete", g_EAI.elevator)
   elseif ordersuccess and ordersRemaining == 0 then
   	reasoncode = "All orders filled."
@@ -370,7 +370,7 @@ function EAIautoExport(callfrom, debugcode, debugmetals, debugslider)
 
 	  -- gather raremetalsInStock
 	local colonystock = {}
-  GatherResourceOverviewData(colonystock) -- use realtime data instead of ResourceOverviewObj since ResourceOverviewObj thread does not update fast enough
+  GatherResourceOverviewData(colonystock, MainCity) -- use realtime data instead of ResourceOverviewObj since ResourceOverviewObj thread does not update fast enough
   local raremetalsInStock = debugmetals or colonystock.PreciousMetals or 0  -- use debugmetals when debugging
   raremetalsInStock = raremetalsInStock + elevator:GetStoredExportResourceAmount() -- count the inventory in the elevator so we dont cycle the elevator when loading the last bit of excess
 
@@ -416,7 +416,7 @@ function EAIautoExport(callfrom, debugcode, debugmetals, debugslider)
   -- send notification once that EAI is controlling the export process
   if not EAInotices.controlling_exports then
   	EAInotices.controlling_exports = true
-  	AddCustomOnScreenNotification("EAI_Notice_Exports", T{StringIdBase + 109, "Elevator A.I Auto Export"}, T{StringIdBase + 110, "Elevator A.I is controlling exports."}, iconEAINotice, nil, {cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime})
+  	AddCustomOnScreenNotification("EAI_Notice_Exports", T{StringIdBase + 109, "Elevator A.I Auto Export"}, T{StringIdBase + 110, "Elevator A.I is controlling exports."}, iconEAINotice, nil, {cycle_objs = {elevator}, expiration = g_EAInoticeDismissTime}, MainMapID)
     PlayFX("UINotificationResearchComplete", g_EAI.elevator)
   end -- if not EAInotices.controlling_exports
 
@@ -446,7 +446,7 @@ function EAIcalcNextFrequencyTime()
 
   table.sort(timeslots)
 
-  local currenthour = UICity.hour
+  local currenthour = UIColony.hour
   local returnhour  = false
   -- check to see if the current hour is later than last hour in timeslots.
   -- If true set to under 0 to compare to timeslots and start from beginning of clock
@@ -476,6 +476,7 @@ function OnMsg.ClassesBuilt()
 	  	if (lf_printcf) then print("Elevator A.I. destroyed") end
 	  	g_EAI.GUID = false
 	  	g_EAI.elevator = false
+	  	g_EAI.map_id = false
 	  	self.EAI_enabled = false
 	  	self.EAI_installed = nil
 	  	self.description = self.description_old
@@ -629,7 +630,7 @@ function OnMsg.ClassesBuilt()
 		-- send a notice that EAI is no longer controlling exports if it was before
     if EAInotices.controlling_exports then
   	  EAInotices.controlling_exports = nil
-  	  AddCustomOnScreenNotification("EAI_Notice_Exports", T{StringIdBase + 109, "Elevator A.I Auto Export"}, T{StringIdBase + 111, "Exports are now manually controlled."}, iconEAINotice, nil, {cycle_objs = {self}, expiration = g_EAInoticeDismissTime})
+  	  AddCustomOnScreenNotification("EAI_Notice_Exports", T{StringIdBase + 109, "Elevator A.I Auto Export"}, T{StringIdBase + 111, "Exports are now manually controlled."}, iconEAINotice, nil, {cycle_objs = {self}, expiration = g_EAInoticeDismissTime}, MainMapID)
       PlayFX("UINotificationResearchComplete", g_EAI.elevator)
     end -- if EAInotices.controlling_exports
 		-- flip toggle if needed
