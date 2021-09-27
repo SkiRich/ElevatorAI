@@ -14,7 +14,7 @@ return PlaceObj('ModDef', {
 	'pops_desktop_uuid', "61f8d83b-4ba6-411d-be5a-792fe6d95b77",
 	'pops_any_uuid', "06f67c2e-9c98-4985-8a05-67558e42296e",
 	'author', "SkiRich",
-	'version', 42,
+	'version', 45,
 	'lua_revision', 1007000,
 	'saved_with_revision', 1008107,
 	'code', {
@@ -48,7 +48,7 @@ return PlaceObj('ModDef', {
 			language = "Russian",
 		},
 	},
-	'saved', 1632704476,
+	'saved', 1632707013,
 	'screenshot1', "Images/ElevatorAILogo.png",
 	'screenshot2', "Images/EAIdisabled.png",
 	'screenshot3', "Images/EAIip1.png",
